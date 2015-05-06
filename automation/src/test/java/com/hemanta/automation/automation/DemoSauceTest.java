@@ -63,7 +63,12 @@ public class DemoSauceTest {
     }
 
   
-  
+    @Test
+    public void testSauceConnect(){
+        
+        driver.get("http://http://localhost:8080/");
+        System.out.println(driver.getTitle());
+    }  
  
 
 	@AfterMethod
