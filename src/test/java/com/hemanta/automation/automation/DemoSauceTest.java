@@ -63,6 +63,12 @@ public class DemoSauceTest {
         System.out.println("in Test");
     }
 
+    @Test
+    public void testSauceConnect(){
+    	
+    	driver.get("http://192.168.0.114:8080");
+    	System.out.println(driver.getTitle());
+    }
  
 
 	@AfterMethod
