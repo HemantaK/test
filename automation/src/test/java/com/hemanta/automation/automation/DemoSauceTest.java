@@ -62,12 +62,8 @@ public class DemoSauceTest {
         AssertJUnit.assertEquals(driver.getTitle(), "Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more");
     }
 
-   @Test
-    public void testSauceConnect(){
-        
-        driver.get("http://192.168.0.114:8080");
-        System.out.println(driver.getTitle());
-    }
+  
+  
  
 
 	@AfterMethod
