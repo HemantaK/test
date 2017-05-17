@@ -35,15 +35,15 @@ public class DemoSauceTest {
      * @param method the test method being executed
      * @throws Exception thrown if any errors occur in the creation of the WebDriver instance
      */
-   
 
-	@Parameters({"username", "key", "os", "browser", "browserVersion"})
+
+    @Parameters({"username", "key", "os", "browser", "browserVersion"})
     @BeforeMethod
-    public void setUp(@Optional("kumar_hemanta") String username,
-                      @Optional("540440a3-f43f-4e65-a507-270454fddb8d") String key,
+    public void setUp(@Optional("hk_test") String username,
+                      @Optional("5a133842-a1a1-4fe8-90e4-205c80a36abb") String key,
                       @Optional("mac") String os,
                       @Optional("firefox") String browser,
-                      @Optional("17") String browserVersion,
+                      @Optional("44") String browserVersion,
                       Method method) throws Exception {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -54,6 +54,7 @@ public class DemoSauceTest {
         this.driver = new RemoteWebDriver(
                 new URL("http://" + username + ":" + key + "@ondemand.saucelabs.com:80/wd/hub"),
                 capabilities);
+        printSessionId(driver);
     }
 
     @Test
@@ -63,17 +64,19 @@ public class DemoSauceTest {
     }
 
   
-    @Test
-    public void testSauceConnect(){
-        
-        driver.get("http://http://localhost:8080/");
-        System.out.println(driver.getTitle());
-    }  
- 
+
 
 	@AfterMethod
     public void tearDown() throws Exception {
         driver.quit();
+    }
+
+
+    private void printSessionId(WebDriver driver) {
+
+        String message = String.format("SauceOnDemandSessionID=%1$s job-name=%2$s",
+                (((RemoteWebDriver) driver).getSessionId()).toString(), "some job name");
+        System.out.println(message);
     }
 
 }
