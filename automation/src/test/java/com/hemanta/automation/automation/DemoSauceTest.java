@@ -76,7 +76,7 @@ public class DemoSauceTest {
     private void printSessionId(WebDriver driver) {
 
         String message = String.format("SauceOnDemandSessionID=%1$s job-name=%2$s",
-                (((RemoteWebDriver) driver).getSessionId()).toString(), "webDriver");
+                (((RemoteWebDriver) driver).getSessionId()).toString(), "Test");
         System.out.println(message);
     }
 
