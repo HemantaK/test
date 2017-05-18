@@ -54,6 +54,7 @@ public class DemoSauceTest {
         this.driver = new RemoteWebDriver(
                 new URL("http://" + username + ":" + key + "@ondemand.saucelabs.com:80/wd/hub"),
                 capabilities);
+        System.out.println(capabilities);
         printSessionId(driver);
     }
 
