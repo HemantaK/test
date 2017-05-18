@@ -50,7 +50,7 @@ public class DemoSauceTest {
         capabilities.setBrowserName(browser);
         capabilities.setCapability("version", browserVersion);
         capabilities.setCapability("platform", os);
-        capabilities.setCapability("name", method.getName());
+        //capabilities.setCapability("name", method.getName());
         this.driver = new RemoteWebDriver(
                 new URL("http://" + username + ":" + key + "@ondemand.saucelabs.com:80/wd/hub"),
                 capabilities);
