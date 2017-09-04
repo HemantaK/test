@@ -39,8 +39,8 @@ public class DemoSauceTest {
 
     @Parameters({"username", "key", "os", "browser", "browserVersion"})
     @BeforeMethod
-    public void setUp(@Optional("hk_test") String username,
-                      @Optional("5a133842-a1a1-4fe8-90e4-205c80a36abb") String key,
+    public void setUp(@Optional("desert1006") String username,
+                      @Optional("9b32a925-85b9-48cd-ae76-ef2cc32cf8b1") String key,
                       @Optional("mac") String os,
                       @Optional("firefox") String browser,
                       @Optional("44") String browserVersion,
