@@ -51,6 +51,7 @@ public class DemoSauceTest {
         capabilities.setCapability("version", browserVersion);
         capabilities.setCapability("platform", os);
         capabilities.setCapability("name", method.getName());
+	capabilities.setCapability("build", System.getenv("JOB_NAME") + "__" + System.getenv("BUILD_NUMBER"));
         this.driver = new RemoteWebDriver(
                 new URL("http://" + username + ":" + key + "@ondemand.saucelabs.com:80/wd/hub"),
                 capabilities);
@@ -79,5 +80,7 @@ public class DemoSauceTest {
                 (((RemoteWebDriver) driver).getSessionId()).toString(), "Test");
         System.out.println(message);
     }
+	
+	
 
 }
