@@ -1,8 +1,8 @@
 {
   "name":"github-action",
   "version" : "1.0.0",
-  
+  "scripts":{
    "test": "node myactiondemo.js"
-  
+  }
  
 }
